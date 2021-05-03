@@ -229,7 +229,8 @@ exports.transferAsset = functions.region('asia-northeast1').https.onCall(async (
                 type: 'ReceiveAsset',
                 amount: amount,
                 opponentAccountId: srcAccountId,
-                opponentDisplayName: srcDisplayName
+                opponentDisplayName: srcDisplayName,
+                yourAccountId: destAccountId
             },
             token: destFcmToken
         };
@@ -243,7 +244,8 @@ exports.transferAsset = functions.region('asia-northeast1').https.onCall(async (
                 type: 'SentAsset',
                 amount: amount,
                 opponentAccountId: destAccountId,
-                opponentDisplayName: destDisplayName
+                opponentDisplayName: destDisplayName,
+                yourAccountId: srcAccountId
             },
             token: srcFcmToken
         };
